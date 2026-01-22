@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopkart-deployment
+  labels:
+    app: shopkart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopkart
+  template:
+    metadata:
+      labels:
+        app: shopkart
+    spec:
+      containers:
+        - name: shopkart-container
+          image: your-dockerhub-username/shopkart-app:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-service:3306/shopkartdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: shopkartuser
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: shopkartpass
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopkart-service
+spec:
+  type: LoadBalancer   # Change to NodePort if using Minikube
+  selector:
+    app: shopkart
+  ports:
+    - protocol: TCP
+      port: 80         # external port
+      targetPort: 8080 # container port
