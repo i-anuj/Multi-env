@@ -39,8 +39,8 @@ jobs:
 
       # 6. Build Docker image
       - name: Build Docker image
-        run: docker build -t yourusername/shopkart-app:${{ github.sha }} .
+        run: docker build -t hacked01/shopkart-app:${{ github.sha }} .
 
       # 7. Push Docker image to Docker Hub / registry
       - name: Push Docker image
-        run: docker push yourusername/shopkart-app:${{ github.sha }}
+        run: docker push hacked01/shopkart-app:${{ github.sha }}
