@@ -1,0 +1,46 @@
+name: cicd
+
+on:
+  push:
+    branches: [main]    # Trigger only on main branch
+  workflow_dispatch:    # Allows manual trigger
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Java + Maven
+      - name: Set up Java & Maven
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: temurin
+          cache: maven   # caches Maven dependencies for faster builds
+
+      # 3. Build and test the Maven project
+      - name: Build & Test
+        run: mvn clean install
+
+      # 4. Optional: Run OWASP Dependency Check for security
+      - name: Dependency Check
+        run: mvn org.owasp:dependency-check-maven:check
+
+      # 5. Log in to Docker Hub / registry
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 6. Build Docker image
+      - name: Build Docker image
+        run: docker build -t yourusername/shopkart-app:${{ github.sha }} .
+
+      # 7. Push Docker image to Docker Hub / registry
+      - name: Push Docker image
+        run: docker push yourusername/shopkart-app:${{ github.sha }}
