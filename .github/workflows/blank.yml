@@ -65,7 +65,7 @@ jobs:
       - name: Update Kubernetes deployment file
         env:
            IMAGE_TAG: ${{ github.sha }}
-           DOCKER_REPO: hacked01/app12
+           DOCKER_REPO: hacked01/shopkart-app
         run: |
      
          NEW_IMAGE="${DOCKER_REPO}:${IMAGE_TAG}"
