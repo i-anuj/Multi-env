@@ -18,7 +18,7 @@ jobs:
       - name: Set up Java & Maven
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: temurin
           cache: maven   # caches Maven dependencies for faster builds
 
