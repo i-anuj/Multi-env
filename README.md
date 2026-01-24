@@ -3,8 +3,7 @@
 ## About 💬
 This is a simple e-commerce website implemented using the `Spring Boot` framework in Java, by a group of five members, namely `Spring Spartans`. This group project is assigned under `Information Processing for Web` in 5th semester of BTech (IT), `University of Calcutta`
 
-Link to the website - [https://shopkart-e-commerce-website.onrender.com](https://shopkart-e-commerce-website.onrender.com)
-
+Link to the website - (https://ecommerce1-ubsp.onrender.com)
 ## Version History 🚩
 ![Version](https://img.shields.io/badge/Version%20no.-v2.0-blue)  ![Type](https://img.shields.io/badge/Version%20type-Stable-005f00)  ![Commit No.](https://img.shields.io/badge/Released%20on-Commit%20no.%20128-orange) 
 
@@ -96,42 +95,7 @@ To clone the repository, follow these steps:
    > \* You may create a `.env` file to store the values of these environment variables, which should be updated to `Run configurations` before executing the project.
 ---
 
-## Executing the Project 💻
 
-### Using Maven Wrapper 
-The Maven Wrapper allows you to run Maven commands without needing to install Maven on your machine. Follow these steps to run the Spring Boot application using the Maven Wrapper:
-1. **Open your terminal**: Make sure you have your terminal (Command Prompt, PowerShell, or any terminal emulator) open.
-2. **Navigate to the project directory**: If you are not already in the project directory, use the `cd` command to navigate to it. For example:
-   
-   ```bash
-   cd path/to/your/ShopKart-E-commerce-Website
-   ```
-   
-3. **Run the application using the Maven Wrapper**: Use the following command to build and start the application:
-   
-    ```bash
-    ./mvnw spring-boot:run
-    ```
-    On Windows, use:
-    ```bash
-    mvnw spring-boot:run
-    ```
-    
-4. Wait for the application to start. You should see output in the terminal indicating that the application is running, along with the port number (default is 8080).
-5. Once the application starts, open your web browser and navigate to:
-   
-     ```
-     http://localhost:8080
-     ```
-     
-### Using an IDE 
-You can also run the Spring Boot application directly from your IDE. Follow these steps based on your preferred IDE:
-1. Launch the IDE & import the project.
-2. Locate the main application class named [`ShopkartApplication.java`](src/main/java/com/springspartans/shopkart/ShopkartApplication.java) in the `src/main/java` directory.
-   - Right-click on the main class file and select `Run As` > `Spring Boot Application`.
-3. Once the application starts, open your web browser and navigate to:
-   
-     ```
      http://localhost:8080
      ```
      
