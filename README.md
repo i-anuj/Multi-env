@@ -38,7 +38,6 @@ Link to the website - (https://ecommerce1-ubsp.onrender.com)
 | `/cartitem/cart`                      | Customer's cart                    |
 | `/order/history`                      | Customer's order history/list      |
 | `/order/summary/{id}`                 | Summary of order placed            |
-                  |
 ---
 
 ## Prerequisites 🛠️
