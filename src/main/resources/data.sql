@@ -1,4 +1,6 @@
-INSERT INTO product (name, category, brand, price, image, stock, discount) VALUES
+INSERT IGNORE INTO product
+(name, category, brand, price, image, stock, discount)
+VALUES
 ('Apple iPhone 15', 'Smartphones', 'Apple', 999.99, '/images/iphone15.jpg', 10, 0.00),
 ('Samsung Galaxy S23', 'Smartphones', 'Samsung', 899.99, '/images/galaxy_s23.jpg', 15, 0.00),
 ('Sony WH-1000XM5', 'Headphones', 'Sony', 349.99, '/images/sony_wh1000xm5.jpg', 20, 10.00),
