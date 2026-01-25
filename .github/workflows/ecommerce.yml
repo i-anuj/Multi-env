@@ -60,6 +60,11 @@ jobs:
       run: sudo apt install gitleaks -y
     - name: Gitleaks Code Scan
       run: gitleaks detect --source . --report-path=gitleaks-report.json -f json
+    - name: Upload Gitleaks scan report
+      uses: actions/upload-artifact@v4
+      with:
+        name: gitleaks-report
+        path: gitleaks-report.json
       
   pushtoDocker:
    runs-on: ubuntu-latest
