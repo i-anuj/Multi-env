@@ -13,6 +13,11 @@ Link to the website - (https://ecommerce1-ubsp.onrender.com)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apache-maven&logoColor=white)
 ---
+| Tier                  | What it contains                    |
+| --------------------- | ----------------------------------- |
+| **Presentation Tier** | JSP, CSS, JavaScript                |
+| **Application Tier**  | Spring Boot (Controllers, Services) |
+| **Data Tier**         | MySQL (Repositories/DAOs)           |
 
 ## Key Features 🌟
 1. `Customer Management` - Login, Sign Up, View & Update Profile
