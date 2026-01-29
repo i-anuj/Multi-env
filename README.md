@@ -61,7 +61,7 @@ To clone the repository, follow these steps:
 3. Run the following command:
    
    ```bash
-   git clone https://github.com/Swarnotaj003/ShopKart-E-commerce-Website.git
+   git clone https://github.com/i-anuj/ecommerce1.git
    ```
    
 4. Navigate into the project directory:
