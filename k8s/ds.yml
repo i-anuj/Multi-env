@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shopkart-deployment
+  name: shopkart-deployment-uat
   labels:
     app: shopkart
 spec:
@@ -43,6 +43,7 @@ spec:
     - protocol: TCP
       port: 80         # external port
       targetPort: 8080 # container port
+
 
 
 
