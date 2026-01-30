@@ -136,5 +136,6 @@ jobs:
         run: |
           git add k8s/ds.yml
           git commit -m "Update Kubernetes deployment with new image tag: ${{ github.sha }} [skip ci]" || echo "No changes to commit"
-          git pull --rebase origin main || echo "Nothing to pull"
-          git push
+          git push origin HEAD:release
+          git pull --rebase origin release || echo "Nothing to pull"
+          
