@@ -97,10 +97,10 @@ jobs:
       echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
       echo "IMAGE_TAG set to $IMAGE_TAG"
 
-       docker build -t hacked01/shopkart-app:${IMAGE_TAG} .
-       docker push hacked01/shopkart-app:${IMAGE_TAG}
-       docker run -d -p 8080:8080 hacked01/shopkart-app:${IMAGE_TAG}
-       docker ps -a
+      docker build -t hacked01/shopkart-app:${IMAGE_TAG} .
+      docker push hacked01/shopkart-app:${IMAGE_TAG}
+      docker run -d -p 8080:8080 hacked01/shopkart-app:${IMAGE_TAG}
+      docker ps -a
    - name: docker ls
      run: docker ps -a
 
