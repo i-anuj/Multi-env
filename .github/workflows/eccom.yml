@@ -65,6 +65,21 @@ jobs:
       with:
         name: gitleaks-report
         path: gitleaks-report.json
+
+    - name: Set up Java & Maven
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: temurin
+        cache: maven
+
+    - name: SonarQube Scan
+      run: |
+        mvn sonar:sonar \
+          -Dsonar.projectKey=your_project_key \
+          -Dsonar.host.url=https://your-sonarqube-server \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.qualitygate.wait=true
       
   pushtoDocker:
    runs-on: ubuntu-latest
