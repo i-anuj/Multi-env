@@ -76,8 +76,8 @@ jobs:
     - name: SonarQube Scan
       run: |
         mvn sonar:sonar \
-          -Dsonar.projectKey=your_project_key \
-          -Dsonar.host.url=https://your-sonarqube-server \
+          -Dsonar.projectKey=ecomm \
+          -Dsonar.host.url=-Dsonar.host.url=http://localhost:9000 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.qualitygate.wait=true
       
