@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       # 1. Checkout code
@@ -35,7 +35,7 @@ jobs:
           path: target/*.jar
     
   Test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
   
     steps:
@@ -77,12 +77,12 @@ jobs:
       run: |
         mvn sonar:sonar \
           -Dsonar.projectKey=ecomm \
-          -Dsonar.host.url=-http://localhost:9000 \
+          -Dsonar.host.url=http://localhost:9000 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.qualitygate.wait=true
       
   pushtoDocker:
-   runs-on: ubuntu-latest
+   runs-on: self-hosted
    needs: Test
 
    steps:
