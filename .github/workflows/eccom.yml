@@ -77,7 +77,7 @@ jobs:
       run: |
         mvn sonar:sonar \
           -Dsonar.projectKey=ecomm \
-          -Dsonar.host.url=-Dsonar.host.url=http://localhost:9000 \
+          -Dsonar.host.url=-http://localhost:9000 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.qualitygate.wait=true
       
